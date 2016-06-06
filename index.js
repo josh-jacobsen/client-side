@@ -9,7 +9,10 @@ xhr.get('https://api.wheretheiss.at/v1/satellites', function (err, data) {
   console.log(data.body) // in case you're curious
 
   var output = data.body
-  console.log(output)
+
+  output = JSON.stringify(output)
+
+  console.log(output);
 
   var viewModel = {
     stations: data.body
