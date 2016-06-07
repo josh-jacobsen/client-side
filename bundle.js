@@ -2,7 +2,6 @@
 var xhr=require("xhr"),example=require("./views/example.hbs");xhr.get("https://api.wheretheiss.at/v1/satellites/25544",function(e,o){e&&console.log(e),console.log(o.body);var r=o.body;console.log("output",r);var s=JSON.parse(r);console.log("input",s);var t={stations:s},l=example(t);document.body.innerHTML=l});
 },{"./views/example.hbs":30,"xhr":27}],2:[function(require,module,exports){
 function forEach(r,t,o){if(!isFunction(t))throw new TypeError("iterator must be a function");arguments.length<3&&(o=this),"[object Array]"===toString.call(r)?forEachArray(r,t,o):"string"==typeof r?forEachString(r,t,o):forEachObject(r,t,o)}function forEachArray(r,t,o){for(var n=0,a=r.length;a>n;n++)hasOwnProperty.call(r,n)&&t.call(o,r[n],n,r)}function forEachString(r,t,o){for(var n=0,a=r.length;a>n;n++)t.call(o,r.charAt(n),n,r)}function forEachObject(r,t,o){for(var n in r)hasOwnProperty.call(r,n)&&t.call(o,r[n],n,r)}var isFunction=require("is-function");module.exports=forEach;var toString=Object.prototype.toString,hasOwnProperty=Object.prototype.hasOwnProperty;
-
 },{"is-function":24}],3:[function(require,module,exports){
 (function (global){
 "undefined"!=typeof window?module.exports=window:"undefined"!=typeof global?module.exports=global:"undefined"!=typeof self?module.exports=self:module.exports={};
@@ -66,6 +65,7 @@ function forEach(r,t,o){if(!isFunction(t))throw new TypeError("iterator must be 
 
 },{}],22:[function(require,module,exports){
 module.exports=require("./dist/cjs/handlebars.runtime")["default"];
+
 },{"./dist/cjs/handlebars.runtime":4}],23:[function(require,module,exports){
 module.exports=require("handlebars/runtime")["default"];
 },{"handlebars/runtime":22}],24:[function(require,module,exports){
@@ -84,5 +84,5 @@ function once(n){var o=!1;return function(){return o?void 0:(o=!0,n.apply(this,a
 function extend(){for(var r={},e=0;e<arguments.length;e++){var t=arguments[e];for(var n in t)hasOwnProperty.call(t,n)&&(r[n]=t[n])}return r}module.exports=extend;var hasOwnProperty=Object.prototype.hasOwnProperty;
 
 },{}],30:[function(require,module,exports){
-var HandlebarsCompiler=require("hbsfy/runtime");module.exports=HandlebarsCompiler.template({1:function(l,a,n,e,t){var u,i=null!=a?a:{},o=n.helperMissing,r="function",s=l.escapeExpression;return"\n"+s((u=null!=(u=n.name||(null!=a?a.name:a))?u:o,typeof u===r?u.call(i,{name:"name",hash:{},data:t}):u))+"\n"+s((u=null!=(u=n.id||(null!=a?a.id:a))?u:o,typeof u===r?u.call(i,{name:"id",hash:{},data:t}):u))+"\n"+s((u=null!=(u=n.latitude||(null!=a?a.latitude:a))?u:o,typeof u===r?u.call(i,{name:"latitude",hash:{},data:t}):u))+"\n"+s((u=null!=(u=n.longitude||(null!=a?a.longitude:a))?u:o,typeof u===r?u.call(i,{name:"longitude",hash:{},data:t}):u))+"\n\n"+s((u=null!=(u=n.velocity||(null!=a?a.velocity:a))?u:o,typeof u===r?u.call(i,{name:"velocity",hash:{},data:t}):u))+"\n\n"},compiler:[7,">= 4.0.0"],main:function(l,a,n,e,t){var u;return null!=(u=n.each.call(null!=a?a:{},null!=a?a.stations:a,{name:"each",hash:{},fn:l.program(1,t,0),inverse:l.noop,data:t}))?u:""},useData:!0});
+var HandlebarsCompiler=require("hbsfy/runtime");module.exports=HandlebarsCompiler.template({1:function(l,a,n,e,t){var u,i=null!=a?a:{},o=n.helperMissing,r="function",s=l.escapeExpression;return"\n"+s((u=null!=(u=n.name||(null!=a?a.name:a))?u:o,typeof u===r?u.call(i,{name:"name",hash:{},data:t}):u))+"\n"+s((u=null!=(u=n.id||(null!=a?a.id:a))?u:o,typeof u===r?u.call(i,{name:"id",hash:{},data:t}):u))+"\n<!-- "+s((u=null!=(u=n.latitude||(null!=a?a.latitude:a))?u:o,typeof u===r?u.call(i,{name:"latitude",hash:{},data:t}):u))+"\n"+s((u=null!=(u=n.longitude||(null!=a?a.longitude:a))?u:o,typeof u===r?u.call(i,{name:"longitude",hash:{},data:t}):u))+"\n\n"+s((u=null!=(u=n.velocity||(null!=a?a.velocity:a))?u:o,typeof u===r?u.call(i,{name:"velocity",hash:{},data:t}):u))+" -->\n\n"},compiler:[7,">= 4.0.0"],main:function(l,a,n,e,t){var u;return null!=(u=n.each.call(null!=a?a:{},null!=a?a.stations:a,{name:"each",hash:{},fn:l.program(1,t,0),inverse:l.noop,data:t}))?u:""},useData:!0});
 },{"hbsfy/runtime":23}]},{},[1]);
