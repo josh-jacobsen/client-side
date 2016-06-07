@@ -10,7 +10,7 @@ xhr.get('https://api.wheretheiss.at/v1/satellites', function (err, data) {
 
   var output = data.body
 
-  output = JSON.stringify(output)
+  output = JSON.parse(output)
 
   console.log(output);
 
