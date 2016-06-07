@@ -17,7 +17,8 @@ xhr.get('https://api.wheretheiss.at/v1/satellites', function (err, data) {
   var viewModel = {
     stations: data.body
   }
-  console.log("viewmodel", viewModel);
+
+  // console.log("viewmodel", viewModel);
   var spaceHtml = example(viewModel)
   console.log('spacehtml', spaceHtml);
   document.body.innerHTML = spaceHtml
